@@ -6,6 +6,9 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[export]{adjustbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \author{Fernando Del Fedele}
 \title{Crecimiento y caracterización de
 láminas delgadas con memoria de
@@ -85,16 +88,12 @@ mediante sputtering.}
 	\subsection{Deposición por magnetrón sputtering}
 		\begin{frame}{Deposición por magnetrón sputtering}
 			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.1]{img/SchemaDeposition.png}
-				\caption{Magnetrones empleados durante las deposiciones.}
-				\label{magnetrones}
-			\end{figure}
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.01]{img/magnetrones.jpg}
-				\caption{Magnetrones empleados durante las deposiciones.}
-				\label{magnetrones}
+				\subfloat[Esquema magentrón.]{
+					\includegraphics[scale=0.1]{img/SchemaDeposition.png}
+				}\qquad
+				\subfloat[Magnetrones empleados durante las deposiciones.]{
+					\includegraphics[scale=0.05]{img/magnetrones.jpg}
+				}
 			\end{figure}
 		\end{frame}
 	
@@ -102,9 +101,8 @@ mediante sputtering.}
 		\begin{frame}{}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[scale=0.1]{img/SEM.png}
-				\caption{Magnetrones empleados durante las deposiciones.}
-				\label{magnetrones}
+				\includegraphics[scale=0.3]{img/SEM.png}
+				\caption{Esquema microscopio electrónico de barrido.}
 			\end{figure}
 		\end{frame}
 	
@@ -112,9 +110,9 @@ mediante sputtering.}
 		\begin{frame}{}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[scale=1]{img/gonio.png}
+				\includegraphics[scale=0.6]{img/gonio.png}
 				\caption{Esquema del dispositivo tipo Bragg-Brentano.}
-				\label{magnetrones}
+				
 			\end{figure}
 		\end{frame}
 	
@@ -122,9 +120,9 @@ mediante sputtering.}
 		\begin{frame}{}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[scale=0.1]{img/TEM.png}
+				\includegraphics[scale=0.4]{img/TEM.png}
 				\caption{Esquema del tubo de un microscopio electrónico de 							  transmisión}
-				\label{magnetrones}
+				
 			\end{figure}
 		\end{frame}
 
@@ -134,7 +132,7 @@ mediante sputtering.}
 				\centering
 				\includegraphics[scale=0.1]{img/DSCscheme.png}
 				\caption{Esquema del DSC empleado.}
-				\label{magnetrones}
+				
 			\end{figure}
 		\end{frame}
 
@@ -142,9 +140,9 @@ mediante sputtering.}
 		\begin{frame}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[scale=0.1]{img/resistividad.eps}
+				\includegraphics[scale=0.4]{img/resistividad.eps}
 				\caption{Esquema del sistema empleado para el método de 								 resistividad por cuatro puntas.}
-				\label{magnetrones}
+				
 			\end{figure}
 		\end{frame}
 	
