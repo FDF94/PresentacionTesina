@@ -67,16 +67,12 @@ mediante sputtering.}
 		\begin{frame}
 			La fase de menor temperatura, B19' pasa a la fase B2, que tiene mayor simetría al aumentar la temperatura. La fase recordada es aquella que está en la fase B2.
 			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.1]{img/B2Phase.png}
-				\caption{Fase B2.}
-				\label{magnetrones}
-			\end{figure}
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.1]{img/B19pPhase.png}
-				\caption{Fase B19'.}
-				\label{magnetrones}
+				\subfloat[Fase B2.]{
+					\includegraphics[scale=0.4]{img/B2Phase.png}
+				}
+				\subfloat[Fase B19'.]{
+					\includegraphics[scale=0.4]{img/B19pPhase.png}
+				}
 			\end{figure}
 		\end{frame}
 		\begin{frame}{Termodinámica de la transformación}
@@ -112,7 +108,6 @@ mediante sputtering.}
 				\centering
 				\includegraphics[scale=0.6]{img/gonio.png}
 				\caption{Esquema del dispositivo tipo Bragg-Brentano.}
-				
 			\end{figure}
 		\end{frame}
 	
@@ -122,7 +117,6 @@ mediante sputtering.}
 				\centering
 				\includegraphics[scale=0.4]{img/TEM.png}
 				\caption{Esquema del tubo de un microscopio electrónico de 							  transmisión}
-				
 			\end{figure}
 		\end{frame}
 
@@ -132,7 +126,6 @@ mediante sputtering.}
 				\centering
 				\includegraphics[scale=0.1]{img/DSCscheme.png}
 				\caption{Esquema del DSC empleado.}
-				
 			\end{figure}
 		\end{frame}
 
@@ -142,16 +135,61 @@ mediante sputtering.}
 				\centering
 				\includegraphics[scale=0.4]{img/resistividad.eps}
 				\caption{Esquema del sistema empleado para el método de 								 resistividad por cuatro puntas.}
-				
 			\end{figure}
 		\end{frame}
 	
 \section{Resultados obtenidos}
-	\begin{frame}
-	ACÁ PONER LAS DOS DEPS
-	\end{frame}
 	\subsection{Deposición de las láminas}
+		\begin{frame}
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{c|c|c|}
+				\cline{2-3}
+				\multicolumn{1}{l|}{} & Primera Deposición 2 & Tercera Deposición \\ \hline
+				\multicolumn{1}{|c|}{Ti{[}\%at{]}} & 30,8 $\pm$ 0,6 & 33,2 $\pm$ 0,5 \\ \hline
+				\multicolumn{1}{|c|}{Ni{[}\%at{]}} & 50,4 $\pm$ 0,2 & 46 $\pm$ 1 \\ \hline
+				\multicolumn{1}{|c|}{Zr{[}\%at{]}} & 18,9 $\pm$ 0,5 & 20,8 $\pm$ 0,4 \\ \hline
+				\end{tabular}
+				\caption{Composición determinada para ambas deposiciones.}
+				\label{compositionAvg}
+			\end{table}
+		\end{frame}
+
+	\subsection{Energía de activación}
+	\begin{frame}
+		\begin{figure}
+			\includegraphics[scale=0.4]{img/DSCPeaks.png}
+		\end{figure}
+		\begin{figure}
+			\includegraphics[scale=0.4]{img/Augis_bennet.png}
+		\end{figure}
+		\begin{figure}
+			\includegraphics[scale=0.4]{img/Kissinger.png}
+		\end{figure}
+	\end{frame}
+
 	\subsection{Fases obtenidas}
+		\begin{frame}{Pobres en $Ni$}
+			\begin{figure}[H]
+				\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiPoor_500.png}} 
+				\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiPoor_600.png}} \\
+				\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiPoor_700.png}}
+				\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiPoor_800.png}} \\
+				\caption{Patrones de difracción para las muestras pobres en $Ni$.}
+				\label{RXNiPoor}
+			\end{figure}		
+		\end{frame}
+		
+		\begin{frame}{Ricas en $Ni$}
+			\begin{figure}[H]
+				\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_500.png}} 
+				\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_600.png}} \\
+				\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.076]{img/RX/NiRich_700.png}}
+				\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_800.png}} \\
+				\caption{Patrones de difracción para las muestras pobres en $Ni$.}
+				\label{RXNiRich}
+			\end{figure}		
+		\end{frame}
 	\subsection{Imágenes obtenidas por TEM}
 	\subsection{Transformación Martensítica}
 \section{Conclusión}
