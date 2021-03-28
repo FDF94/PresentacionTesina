@@ -1,5 +1,6 @@
 \documentclass[11pt]{beamer}
 \usetheme{Warsaw}
+\usepackage[spanish]{babel}     % for proper word breaking at line ends
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
@@ -26,7 +27,7 @@ mediante sputtering.}
 \titlepage
 \end{frame}
 
-\begin{frame}{Contenido}
+\begin{frame}[allowframebreaks]{Contenido}
 \tableofcontents
 \end{frame}
 
@@ -34,7 +35,7 @@ mediante sputtering.}
 
 	\subsection{Materiales con memoria de forma}
 		\begin{frame}{Materiales con memoria de forma}
-			Las aleaciones con memoria de forma, de aquí en adelante nombradas como \textbf{SMA} (del inglés, \textbf{S}hape \textbf{M}emory \textbf{A}lloys) son aleaciones que pueden recuperar su forma original al ser calentadas luego de haber sufrido una deformación aparentemente plástica
+			Las aleaciones con memoria de forma, conocidas como \textbf{SMA} (del inglés, \textbf{S}hape \textbf{M}emory \textbf{A}lloys) son aleaciones que pueden recuperar su forma original al ser calentadas luego de haber sufrido una deformación aparentemente plástica
 			Entre sus propiedades, se encuentran:
 			\begin{itemize}
 				\item Superelasticidad
@@ -42,16 +43,37 @@ mediante sputtering.}
 				\item Alta relación entre la potencia entregada y su peso
 			\end{itemize}
 		\end{frame}
+			
+		\begin{frame}{Aleación Niquel-Titanio}
+			\begin{columns}[T]
+				\begin{column}{.49\textwidth}
+					\begin{figure}[H]
+					\centering
+					\includegraphics[scale=0.25]{img/NiTiphasediagram.png}
+					\caption{Diagrama de fases de NiTi centrado en 50\%.}
+					\end{figure}
+				\end{column}
+				\begin{column}{.49\textwidth}
+				A las propiedades ya mencionadas, la aleación $NiTi$ adicionalmente posee:
+					\begin{itemize}
+						\item Alta vida útil antes de sufrir fatiga
+						\item Resistencia a la corrosión
+						\item Biocompatible
+					\end{itemize}
+				\end{column}
+			\end{columns}
+		\end{frame}
 		
 	\subsection{Materiales con memoria de forma de alta temperatura}
-		\begin{frame}
+		\begin{frame}{Materiales con memoria de forma de alta temperatura}
 			Las aplicaciones actuales de los SMA están limitadas por debajo de los $100^\circ C$. Los materiales con memoria de forma de alta temperatura, abreviados como \textbf{HTSMA} (del inglés, \textbf{H}igh \textbf{T}emperature \textbf{S}hape \textbf{M}emory \textbf{A}lloys) son aquellos en los cuales la transformación martensítica sucede a $T > 100^\circ C$.
 			
-			Lo más común a es a $NiTi$ agregarle $Pd$ o $Pt$ en detrimento del $Ti$, pero recientemente se encontró que $Hf$ o $Zr$ tienen efectos aún mayores en la temperatura a menor costo relativo.
+			Lo más común a es a $NiTi$ agregarle $Pd$ o $Pt$ en detrimento del $Ni$, pero recientemente se encontró que $Hf$ o $Zr$ en lugar del $Ti$ tienen efectos aún mayores en la temperatura a menor costo relativo.
 		\end{frame}
+		
 	\subsection{Objetivo}
-		\begin{frame}
-			El objetivo del presente estudio es, sabiendo que la aleación $NiTi$ presenta el efecto de memoria de forma, agregarle $Zr$ en detrimento del $Ti$ con la expectativa que las temperaturas en las cuales sucede el efecto de memoria de forma sean superiores a los 100$^\circ C$. El material se estudia en forma de láminas delgadas (TAMAÑO) depositadas mediante magnetrón sputtering.
+		\begin{frame}{Objetivo}
+			El objetivo del presente estudio es, sabiendo que la aleación $NiTi$ presenta el efecto de memoria de forma, agregarle $Zr$ en detrimento del $Ti$ con la expectativa que las temperaturas en las cuales sucede el efecto de memoria de forma sean superiores a los 100$^\circ C$. El material se estudia en forma de láminas delgadas depositadas mediante magnetrón sputtering.
 		\end{frame}
 	
 	\subsection{Transformación martensítica}
@@ -78,6 +100,22 @@ mediante sputtering.}
 				}
 			\end{figure}
 		\end{frame}
+
+		\begin{frame}{Temperatura de la transformación}
+			\begin{columns}[T]
+				\begin{column}{.49\textwidth}
+					\begin{figure}
+						\includegraphics[scale=0.5]{img/Sma_wire.jpeg}
+					\end{figure}
+				\end{column}
+				\begin{column}{.49\textwidth}
+					\begin{figure}
+						\includegraphics[scale=0.25]{img/TvsStress.png}
+					\end{figure}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		
 		\begin{frame}{Termodinámica de la transformación}
 			\begin{columns}[T] % align columns
 				\begin{column}{.48\textwidth}
@@ -87,25 +125,58 @@ mediante sputtering.}
 				\end{column}
 				\hfill
 				\begin{column}{.48\textwidth}
-					\color{blue}\rule{\linewidth}{4pt}
-					
-					Right Part
+				Fracción transformada ($\xi$) y energía libre de Gibbs de ambas fases como función de la temperatura en los casos: 
+					\begin{itemize}
+						\item si la transformación sucediera a la temperatura de equilibrio termodinámico (a) y (b)
+						\item si sólo hubiera trabajo de fricción (c) y (d)
+						\item si hubiera tanto trabajo de fricción como trabajo elástico (e) y (f)
+					\end{itemize}
 				\end{column}
 			\end{columns}
+		\end{frame}
+		
+	\subsection{Cristalización}
+		\begin{frame}{Cristalización}
+			\begin{figure}
+				\includegraphics[scale=0.3]{img/cristalization.png}
+				\caption{Esquema de nucleación y crecimiento}
+			\end{figure}
 		\end{frame}
 
 \section{Técnicas experimentales}
 
 	\subsection{Deposición por magnetrón sputtering}
 		\begin{frame}{Deposición por magnetrón sputtering}
-			\begin{figure}[H]
-				\subfloat[Esquema magentrón.]{
-					\includegraphics[scale=0.1]{img/SchemaDeposition.png}
-				}\qquad
-				\subfloat[Magnetrones empleados durante las deposiciones.]{
-					\includegraphics[scale=0.05]{img/magnetrones.jpg}
-				}
-			\end{figure}
+			\begin{columns}[T]
+				\begin{column}{.4\textwidth}
+					\begin{figure}[H]
+					\centering
+					\includegraphics[scale=0.2]{img/SchemaDeposition.png}
+					\caption{Esquema magnetrón sputtering.}
+					\end{figure}
+				\end{column}
+				\begin{column}{.58\textwidth}
+					\begin{figure}[H]
+					\includegraphics[scale=0.04]{img/magnetrones.jpg}
+					\end{figure}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		\begin{frame}{Foto de la cámara}
+			\begin{columns}[T]
+				\begin{column}{.49\textwidth}
+					\begin{figure}[H]
+					\centering
+					\includegraphics[scale=0.04]{img/camara.jpg}
+					\caption{Esquema magnetrón sputtering.}
+					\end{figure}
+				\end{column}
+				\begin{column}{.49\textwidth}
+					\begin{figure}[H]
+					\includegraphics[scale=0.04]{img/muestras.jpg}
+					\end{figure}
+				\end{column}
+			\end{columns}
 		\end{frame}
 	
 	\subsection{Microscopía electrónica de barrido}
