@@ -9,19 +9,23 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage[export]{adjustbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\author{Fernando Del Fedele}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\author{\begin{tabular}{r@{ }l} 
+Autor:      & Fernando Del Fedele \\[1ex] 
+Director: & Lucio Isola\\
+Codirector: & Bruno Malvasio
+\end{tabular}}
 \title{Crecimiento y caracterización de
 láminas delgadas con memoria de
 forma de alta temperatura Ni-Ti-Zr
 mediante sputtering.}
-%\setbeamercovered{transparent} 
+\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
-%\logo{} 
-%\institute{Universidad Nacional de Rosario} 
+\logo{\includegraphics[scale=0.08]{img/fceia.jpg}} 
+\institute{Universidad Nacional de Rosario} 
 %\date{} 
 %\subject{} 
-\begin{document}
 
 \begin{frame}
 \titlepage
@@ -49,8 +53,8 @@ mediante sputtering.}
 				\begin{column}{.49\textwidth}
 					\begin{figure}[H]
 					\centering
-					\includegraphics[scale=0.25]{img/DiagramaNiTi.jpg}
-					\caption*{Diagrama de fases de NiTi centrado en 50\%.}
+					\includegraphics[scale=0.35]{img/DiagramaNiTi.jpg}
+					%\caption*{Diagrama de fases de NiTi centrado en 50\%.}
 					\end{figure}
 				\end{column}
 				\begin{column}{.49\textwidth}
@@ -75,7 +79,47 @@ mediante sputtering.}
 		\begin{frame}{Objetivo}
 			El objetivo del presente estudio es, sabiendo que la aleación $NiTi$ presenta el efecto de memoria de forma, agregarle $Zr$ en detrimento del $Ti$ con la expectativa que las temperaturas en las cuales sucede el efecto de memoria de forma sean superiores a los 100$^\circ C$. El material se estudia en forma de láminas delgadas depositadas mediante magnetrón sputtering.
 		\end{frame}
-	
+		
+	\subsection{Cristalización}
+		\begin{frame}{Cristalización}
+			\begin{figure}
+				\includegraphics[scale=0.35]{img/cristalization.png}
+				\caption*{Esquema de nucleación y crecimiento.}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}{Ecuación de Johnson-Mehl}
+			\begin{columns}[T]	
+				\begin{column}{.4\textwidth}
+					\begin{figure}
+						\includegraphics[scale=0.3]{img/cristalization_vs_tiempo.png}
+						\caption*{Esquema cristalización en función del tiempo}
+					\end{figure}
+				\end{column}
+				\begin{column}{.59\textwidth}
+					Asumiendo velocidad de nucleación constante $I$ y velocidad de transformacion $\Gamma$ isótropica, en un comienzo la transformación estará gobernada por $X_e(t) = \frac{\pi}{3}\Gamma^3 I t^4$.
+					
+					A tiempos grandes, la función debe saturar en 1, esto se representa mediante la ecuación diferencial $dX = (1 - X)dX_e$, cuya solución es $X(t)=1-e^{-\frac{\pi}{3}V^3 I t^4}$. Esta se conoce como la ecuación de Johnson-Mehl.
+				\end{column}
+			\end{columns}
+		\end{frame}
+		\begin{frame}{Modelo de Avrami}
+		Ahora cambiamos la hipótesis inicial a que I no es constante, sino que la velocidad de nucleación decaerá a medida que la muestra vaya transformando. Esto es $N(t) = N_0e^{-\nu t}$. Esto genera que para valores cercanos a de t a 0 recuperamos la ecuación de Johnson-Mehl, pero para valores altos, tendremos $X = 1 - exp\left\lbrace -\frac{4}{3} \pi N_0 \nu^3 t^3 \right\rbrace$, que en forma genérica es de la forma $X = 1 - e^{-(kt)^n}$, $k=fe^{-\frac{E_c}{RT}}$, siendo n el coeficiente de Avrami, $f$ el factor de frecuencia y $E_c$ la energía de cristalización.
+		\end{frame}
+		
+		\begin{frame}{Métodos de Kissinger y Augis-Bennet}
+			\begin{columns}
+				\begin{column}{.49\textwidth}
+					Kissinger \\ Es un caso particular del modelo de Avrami con n=1, esto es $X(t) = 1 - e^{-kt}$. Suponiendo que $T(t) = T_0+\alpha t$ como suele ser el caso de un DSC, queda $fe^{-\frac{E_c}{RT}} = \frac{\alpha E_c}{R T_p^2}$ y, simplificando, $ln(\frac{\alpha}{R T_p^2}) = -\frac{E_c}{RT_p} + cte$.
+				\end{column}
+				\begin{column}{.49\textwidth}
+				Augis-Bennet\\
+				Considera que el proceso es aproximable por una serie de pasos isotérmicos. Suponiendo que $T(t) = T_0+\alpha t$, queda $k\: t = f\: t\: exp \left\lbrace -\frac{E_c}{R(T_0 + \alpha t)} \right\rbrace$, que permite reescribir el modelo de Avrami como $X = 1-e^{-u^{n}}$. Con este modelo finalmente se obtiene $f^n exp \left\lbrace -\frac{n E_c}{RT_p} \right\rbrace = (\frac{\alpha}{T_p - T_0})^n$  y simplificando $ln(\frac{\alpha}{T_p - T_0}) = -\frac{n E_c}{RT_p} + cte$.
+				\end{column}
+			\end{columns}
+		\end{frame}	
+		
+		
 	\subsection{Transformación martensítica}
 		\begin{frame}{Transformación martensítica}
 			La causa del efecto de memoria de forma es la transformación martensítica.
@@ -119,32 +163,27 @@ mediante sputtering.}
 			\end{columns}
 		\end{frame}
 		
-		\begin{frame}{Termodinámica de la transformación}
-			\begin{columns}[T] % align columns
-				\begin{column}{.4\textwidth}
-					\begin{figure}
-						\includegraphics[scale=0.2]{img/Termo.eps}
-					\end{figure}
-				\end{column}
-				\hfill
-				\begin{column}{.59\textwidth}
-				Fracción transformada ($\xi$) y energía libre de Gibbs de ambas fases como función de la temperatura en los casos: 
-					\begin{itemize}
-						\item si la transformación sucediera a la temperatura de equilibrio termodinámico (a) y (b)
-						\item si sólo hubiera trabajo de fricción (c) y (d)
-						\item si hubiera tanto trabajo de fricción como trabajo elástico (e) y (f)
-					\end{itemize}
-				\end{column}
-			\end{columns}
-		\end{frame}
-		
-	\subsection{Cristalización}
-		\begin{frame}{Cristalización}
+		\begin{frame}
 			\begin{figure}
-				\includegraphics[scale=0.3]{img/cristalization.png}
-				\caption*{Esquema de nucleación y crecimiento}
+				\includegraphics[scale=0.25]{img/GibbsIdealCase.png}
+				\caption*{Si la transformación sucediera a la temperatura de equilibrio termodinámico.}		
 			\end{figure}
 		\end{frame}
+		
+		\begin{frame}
+			\begin{figure}
+				\includegraphics[scale=0.25]{img/GibbsWithFriction.png}
+				\caption*{Si sólo hubiera trabajo de fricción.}
+			\end{figure}
+		\end{frame}
+
+		\begin{frame}
+			\begin{figure}
+				\includegraphics[scale=0.25]{img/GibbsElasticEnergy.png}
+				\caption*{Si hubiera tanto trabajo de fricción como trabajo elástico}
+			\end{figure}
+		\end{frame}
+
 
 \section{Técnicas experimentales}
 
@@ -154,8 +193,8 @@ mediante sputtering.}
 				\begin{column}{.4\textwidth}
 					\begin{figure}[H]
 					\centering
-					\includegraphics[scale=0.2]{img/SchemaDeposition.png}
-					\caption*{Esquema magnetrón sputtering.}
+					\includegraphics[scale=0.25]{img/SchemaDeposition.png}
+					%\caption*{Esquema magnetrón sputtering.}
 					\end{figure}
 				\end{column}
 				\begin{column}{.58\textwidth}
@@ -283,46 +322,46 @@ mediante sputtering.}
 		\end{frame}
 
 	\subsection{Energía de activación}
-	\begin{frame}{Energía de activación}
-		\begin{figure}
-			\includegraphics[scale=0.1]{img/DSCPeaks.png}
-			\caption*{Flujo de calores a distintas velocidades de calentamiento.}
-		\end{figure}
-	\end{frame}
-	
-	\begin{frame}
-		\begin{columns}
-			\begin{column}{.49\textwidth}
-				\begin{figure}
-					\includegraphics[scale=0.2]{img/Augis_bennet.png}
-					\caption*{Regresión por el método de Augis-Bennet. $E_c = 410 \pm 30$ kJ}
-				\end{figure}
-			\end{column}
-			\begin{column}{.49\textwidth}
-				\begin{figure}
-					\includegraphics[scale=0.2]{img/Kissinger.png}
-					\caption*{Regresión por el método de Kissinger. $E_c = 420 \pm 30$ kJ}				
-				\end{figure}
-			\end{column}
-		\end{columns}
-	\end{frame}
-	
-	\begin{frame}
-		\begin{table}[H]
-			\centering
-			\begin{tabular}{|c|c|c|}
-				\hline
-				Composición & \begin{tabular}[c]{@{}c@{}}Energía de \\ activacion {[}kJ/mol{]}\end{tabular} & Método \\ \hline
-				$Ni_{48,89}Ti_{40,50}Zr_{10,61}$ & 417,2  & composición en cinta\\ \hline
-				$Ni_{48,71}Ti_{35,59}Zr_{15,70}$ & 432,9 & composición en cinta\\ \hline
-				$Ni_{48,25}Ti_{31,26}Zr_{20,49}$ & 482,4 & composición en cinta\\ \hline
-				$Ni_{47,95}Ti_{26,72}Zr_{25,33}$ & 465,8 & composición en cinta\\ \hline
-				$Ni_{49,40}Ti_{19,96}Zr_{30,64}$ & 445,7 & composición en cinta\\ \hline
-				$Ni_{49,6}Ti_{30,9}Zr_{19,5}$ & 449 $\pm$ 5 & melt spinning\\ \hline
-			\end{tabular}
-			\caption*{Valores reportados por Xiaoyang Yi et al para la energía de activación para distintas composiciones en cinta.}
-			\label{XiaoyangYiValues}
-		\end{table}
+		\begin{frame}{Energía de activación de la cristalización}
+			\begin{figure}
+				\includegraphics[scale=0.15]{img/DSCPeaks.png}
+				\caption*{Flujo de calores a distintas velocidades de calentamiento.}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}
+			\begin{columns}
+				\begin{column}{.49\textwidth}
+					\begin{figure}
+						\includegraphics[scale=0.2]{img/Augis_bennet.png}
+						\caption*{Regresión por el método de Augis-Bennet. $E_c = 410 \pm 30$ kJ}
+					\end{figure}
+				\end{column}
+				\begin{column}{.49\textwidth}
+					\begin{figure}
+						\includegraphics[scale=0.2]{img/Kissinger.png}
+						\caption*{Regresión por el método de Kissinger. $E_c = 420 \pm 30$ kJ}				
+					\end{figure}
+				\end{column}
+			\end{columns}
+		\end{frame}
+		
+		\begin{frame}
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{|c|c|c|}
+					\hline
+					Composición & \begin{tabular}[c]{@{}c@{}}Energía de \\ activacion {[}kJ/mol{]}\end{tabular} & Método \\ \hline
+					$Ni_{48,89}Ti_{40,50}Zr_{10,61}$ & 417,2  & composición en cinta\\ \hline
+					$Ni_{48,71}Ti_{35,59}Zr_{15,70}$ & 432,9 & composición en cinta\\ \hline
+					$Ni_{48,25}Ti_{31,26}Zr_{20,49}$ & 482,4 & composición en cinta\\ \hline
+					$Ni_{47,95}Ti_{26,72}Zr_{25,33}$ & 465,8 & composición en cinta\\ \hline
+					$Ni_{49,40}Ti_{19,96}Zr_{30,64}$ & 445,7 & composición en cinta\\ \hline
+					$Ni_{49,6}Ti_{30,9}Zr_{19,5}$ & 449 $\pm$ 5 & melt spinning\\ \hline
+				\end{tabular}
+				\caption*{Valores reportados por Xiaoyang Yi et al para la energía de activación para distintas composiciones en cinta.}
+				\label{XiaoyangYiValues}
+			\end{table}
 
 %Por otra parte, Malvasio en 2017 \citep{Malvasio}, en láminas delgadas obtenidas por deposición mediante magnetrón sputtering en la aleación binaria ($Ni_{54,2}Ti_{45,8}$), obtuvo una energía de activación de $E_c = 300 \pm 30 kJ/mol$ tanto por el método de Kissinger como por el método de Augis-Bennet.
 %
@@ -331,13 +370,21 @@ mediante sputtering.}
 
 	\subsection{Pobres en $Ni$}
 		\subsubsection{Fases obtenidas}
-			\begin{frame}{Difracción por rayos X}
+			\begin{frame}{Difracción por rayos X I}
 				\begin{figure}[H]
 					\captionsetup[subfloat]{labelformat=empty}
-					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.09]{img/RX/NiPoor_500.png}} \qquad
-					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.09]{img/RX/NiPoor_600.png}} \\
-					\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.09]{img/RX/NiPoor_700.png}} \qquad
-					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.09]{img/RX/NiPoor_800.png}} \\
+					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiPoor_500.png}} \qquad
+					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiPoor_600.png}}
+					\caption*{Patrones de difracción para las muestras pobres en $Ni$.}
+					\label{RXNiPoor}
+				\end{figure}		
+			\end{frame}
+			
+			\begin{frame}{Difracción por rayos X II}
+				\begin{figure}[H]
+					\captionsetup[subfloat]{labelformat=empty}
+					\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiPoor_700.png}} \qquad
+					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiPoor_800.png}}
 					\caption*{Patrones de difracción para las muestras pobres en $Ni$.}
 					\label{RXNiPoor}
 				\end{figure}		
@@ -379,16 +426,20 @@ mediante sputtering.}
 			\end{frame}
 
 		\subsubsection{Temperaturas de transformación}
-			\begin{frame}{Curvas de DSC}
+			\begin{frame}{Curvas de DSC I}
 				\begin{figure}[H]
 				\captionsetup[subfloat]{labelformat=empty}
-	
-					\noindent\makebox[\linewidth][c]{
-						\subfloat[Muestra tratada a $500 ^\circ C$]{\includegraphics[scale=0.06]{img/DSCNiPoor/500}}\qquad
-						\subfloat[Muestra tratada a $600 ^\circ C$]{\includegraphics[scale=0.06]{img/DSCNiPoor/600}}} \\
-					\noindent\makebox[\linewidth][c]{
-						\subfloat[Muestra tratada a $700 ^\circ C$]{\includegraphics[scale=0.06]{img/DSCNiPoor/700}}\qquad
-						\subfloat[Muestra tratada a $800 ^\circ C$]{\includegraphics[scale=0.06]{img/DSCNiPoor/800}}}
+					\subfloat[Muestra tratada a $500 ^\circ C$]{\includegraphics[scale=0.09]{img/DSCNiPoor/500}}
+					\subfloat[Muestra tratada a $600 ^\circ C$]{\includegraphics[scale=0.09]{img/DSCNiPoor/600}}
+					\caption*{Curvas de DSC para las distintas muestras.}
+				\end{figure}	
+			\end{frame}
+			
+			\begin{frame}{Curvas de DSC II}
+				\begin{figure}[H]
+				\captionsetup[subfloat]{labelformat=empty}
+					\subfloat[Muestra tratada a $700 ^\circ C$]{\includegraphics[scale=0.09]{img/DSCNiPoor/700}}
+					\subfloat[Muestra tratada a $800 ^\circ C$]{\includegraphics[scale=0.09]{img/DSCNiPoor/800}}
 					\caption*{Curvas de DSC para las distintas muestras.}
 				\end{figure}	
 			\end{frame}
@@ -397,13 +448,13 @@ mediante sputtering.}
 				\begin{columns}
 					\begin{column}{.49\textwidth}
 						\begin{figure}
-							\includegraphics[scale=0.2]{img/MsNiDependence.png}
+							\includegraphics[scale=0.32]{img/MsNiDependence.png}
 							\caption*{Efecto del porcentaje de Ni en la aleación NiTiZr.}
 						\end{figure}
 					\end{column}
 					\begin{column}{.49\textwidth}
 						\begin{figure}
-							\includegraphics[scale=0.2]{img/MsZrDependence.jpeg}
+							\includegraphics[scale=0.32]{img/MsZrDependence.jpeg}
 							\caption*{Efecto del porcentaje de Zr en la aleación NiTiZr.}				
 						\end{figure}
 					\end{column}
@@ -412,13 +463,20 @@ mediante sputtering.}
 			
 	\subsection{Ricas en $Ni$}	
 		\subsubsection{Fases obtenidas}
-			\begin{frame}{Difracción por rayos X}
+			\begin{frame}{Difracción por rayos X I}
 				\begin{figure}[H]
 				\captionsetup[subfloat]{labelformat=empty}
-					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_500.png}} \qquad
-					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_600.png}} \\
-					\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.076]{img/RX/NiRich_700.png}} \qquad
-					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.1]{img/RX/NiRich_800.png}} \\
+					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiRich_500.png}} \qquad
+					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiRich_600.png}}
+					\caption*{Patrones de difracción para las muestras pobres en $Ni$.}
+				\end{figure}		
+			\end{frame}
+			
+			\begin{frame}{Difracción por rayos X II}
+				\begin{figure}[H]
+				\captionsetup[subfloat]{labelformat=empty}
+					\subfloat[Muestra a $700 ^\circ C$]{\includegraphics[scale=0.0912]{img/RX/NiRich_700.png}} \qquad
+					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.12]{img/RX/NiRich_800.png}} \\
 					\caption*{Patrones de difracción para las muestras pobres en $Ni$.}
 				\end{figure}		
 			\end{frame}
@@ -473,17 +531,17 @@ mediante sputtering.}
 				\end{figure}		
 			\end{frame}
 		
-			\begin{frame}{Curvas de Resistividad}
+			\begin{frame}[allowframebreaks]{Curvas de Resistividad}
 				\begin{figure}[H]
 				\captionsetup[subfloat]{labelformat=empty}
 					\centering
-					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.06]{img/Resistance_500_alt.png}} \qquad
-					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.06]{img/Resistance_600_alt.png}}\\
-					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.06]{img/Resistance_800_alt.png}} 
+					\subfloat[Muestra a $500 ^\circ C$]{\includegraphics[scale=0.08]{img/Resistance_500_alt.png}} \qquad
+					\subfloat[Muestra a $600 ^\circ C$]{\includegraphics[scale=0.08]{img/Resistance_600_alt.png}}\\
+					\subfloat[Muestra a $800 ^\circ C$]{\includegraphics[scale=0.08]{img/Resistance_800_alt.png}} 
 					\caption*{Mediciones del método de resistividad de cuatro puntas en las cuales no fue posible hallar las temperaturas de transformación.}
 				\end{figure}
 			\end{frame}
-		
+				
 			\begin{frame}
 				\begin{figure}[H]
 					\centering
@@ -500,8 +558,8 @@ mediante sputtering.}
 			\item Una deposición rica en Ni (50,4 at\% $Ni$, 30,8 at\% $Ti$ y 18,9 at\% $Zr$) y otra pobre en Ni(46 at\% $Ni$, 33,2 at\% $Ti$ y 20,8 at\% $Zr$).
 			\item Por el método de Kissinger se obtuvo una energía de activación de (420 $\pm$ 30) $kJ$ y por el de Augis-Bennet de (410 $\pm$ 30) $kJ$, ambos valores coincidentes entre sí y comparables con los informados por otros autores.
 			\item Las muestras de ambas deposiciones fueron tratadas termicamente por una hora en atmósfera de $Ar$ a 3 $mTorr$ a $500^\circ C$, $600^\circ C$, $700^\circ C$ y $800^\circ C$.
-			\item Mediante TEM y RX se hallaron para las muestras pobres en $Ni$ las fases B2, $(Ti, Zr)_2Ni$ (o posiblemente $(Ti, Zr)_4Ni_2O$, $\lambda$ y $NiZr$.
-			\item Para las muestras ricas en $Ni$, adicionalmente, se halló la fase H.
+			\item Mediante TEM y RX se hallaron para las muestras pobres en $Ni$ las fases B2, $(Ti, Zr)_2Ni$ (o posiblemente $(Ti, Zr)_4Ni_2O$), $\lambda$ y $NiZr$.
+			\item Para las muestras ricas en $Ni$, adicionalmente, se halló la fase H, pero no la fase $\lambda$.
 			\item Mediante DSC en ninguna muestra pudo ser detectada una transformación de fase.
 			\item Mediante resistividad por el método de cuatro puntas, se determinaron las temperaturas de transformación para la muestra rica en $Ni$ tratada a $700^\circ C$.
 			\item Los motivos por los cuales las temperaturas de transformación fueron más bajas de lo esperado fueron por la presencia de fases adicionales que removían $Zr$ y $Ti$ de la fase matriz, sumado al bajo tamaño de grano, que requería un sobreenfriamiento mayor.
