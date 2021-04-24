@@ -77,7 +77,7 @@ mediante sputtering.}
 		
 	\subsection{Objetivo}
 		\begin{frame}{Objetivo}
-			El objetivo del presente estudio es, sabiendo que la aleación $NiTi$ presenta el efecto de memoria de forma, agregarle $Zr$ en detrimento del $Ti$ con la expectativa que las temperaturas en las cuales sucede el efecto de memoria de forma sean superiores a los 100$^\circ C$. El material se estudia en forma de láminas delgadas depositadas mediante magnetrón sputtering.
+			El objetivo del presente estudio es caracterizar láminas delgadas de $NiTiZr$, cuando estas son generadas mediante el método de magnetrón sputtering. En particular, se estudian las propiedades relacionadas con la transformación martensítica y con el proceso de cristalización.
 		\end{frame}
 		
 	\subsection{Cristalización}
@@ -90,33 +90,49 @@ mediante sputtering.}
 		
 		\begin{frame}{Ecuación de Johnson-Mehl}
 			\begin{columns}[T]	
-				\begin{column}{.4\textwidth}
+				\begin{column}{.49\textwidth}
 					\begin{figure}
-						\includegraphics[scale=0.3]{img/cristalization_vs_tiempo.png}
+						\includegraphics[scale=0.5]{img/cristalization_vs_tiempo.png}
 						\caption*{Esquema cristalización en función del tiempo}
 					\end{figure}
 				\end{column}
-				\begin{column}{.59\textwidth}
-					Asumiendo velocidad de nucleación constante $I$ y velocidad de transformacion $\Gamma$ isótropica, en un comienzo la transformación estará gobernada por $X_e(t) = \frac{\pi}{3}\Gamma^3 I t^4$.
-					
-					A tiempos grandes, la función debe saturar en 1, esto se representa mediante la ecuación diferencial $dX = (1 - X)dX_e$, cuya solución es $X(t)=1-e^{-\frac{\pi}{3}V^3 I t^4}$. Esta se conoce como la ecuación de Johnson-Mehl.
+				\begin{column}{.49\textwidth}
+				La ecuación de Johnson-Mehl es una primera aproximación a este funcionamiento:
+				\begin{equation}
+					X(t)=1-e^{-\frac{\pi}{3}V^3 I t^4}
+				\end{equation}
+					Siendo $I$ la velocidad de nucleación constante.
 				\end{column}
 			\end{columns}
 		\end{frame}
 		\begin{frame}{Modelo de Avrami}
-		Ahora cambiamos la hipótesis inicial a que I no es constante, sino que la velocidad de nucleación decaerá a medida que la muestra vaya transformando. Esto es $N(t) = N_0e^{-\nu t}$. Esto genera que para valores cercanos a de t a 0 recuperamos la ecuación de Johnson-Mehl, pero para valores altos, tendremos $X = 1 - exp\left\lbrace -\frac{4}{3} \pi N_0 \nu^3 t^3 \right\rbrace$, que en forma genérica es de la forma $X = 1 - e^{-(kt)^n}$, $k=fe^{-\frac{E_c}{RT}}$, siendo n el coeficiente de Avrami, $f$ el factor de frecuencia y $E_c$ la energía de cristalización.
+			A valores cercanos de t a 0 recuperamos la ecuación de Johnson-Mehl, pero para valores altos, tendremos
+			\begin{equation}
+				X = 1 - exp\left\lbrace -\frac{4}{3} \pi N_0 \nu^3 t^3 \right\rbrace
+			\end{equation}		 
+			Cuya forma genérica es de la forma 
+			\begin{equation}
+				1 - e^{-(kt)^n}, k=fe^{-\frac{E_c}{RT}}
+			\end{equation} 
+			Siendo n el coeficiente de Avrami, $f$ el factor de frecuencia y $E_c$ la energía de cristalización.
 		\end{frame}
 		
 		\begin{frame}{Métodos de Kissinger y Augis-Bennet}
 			\begin{columns}
 				\begin{column}{.49\textwidth}
-					Kissinger \\ Es un caso particular del modelo de Avrami con n=1, esto es $X(t) = 1 - e^{-kt}$. Suponiendo que $T(t) = T_0+\alpha t$ como suele ser el caso de un DSC, queda $fe^{-\frac{E_c}{RT}} = \frac{\alpha E_c}{R T_p^2}$ y, simplificando, $ln(\frac{\alpha}{R T_p^2}) = -\frac{E_c}{RT_p} + cte$.
+					Kissinger \\ 
+					\begin{equation}
+						ln(\frac{\alpha}{R T_p^2}) = -\frac{E_c}{RT_p} + cte
+					\end{equation}
 				\end{column}
 				\begin{column}{.49\textwidth}
-				Augis-Bennet\\
-				Considera que el proceso es aproximable por una serie de pasos isotérmicos. Suponiendo que $T(t) = T_0+\alpha t$, queda $k\: t = f\: t\: exp \left\lbrace -\frac{E_c}{R(T_0 + \alpha t)} \right\rbrace$, que permite reescribir el modelo de Avrami como $X = 1-e^{-u^{n}}$. Con este modelo finalmente se obtiene $f^n exp \left\lbrace -\frac{n E_c}{RT_p} \right\rbrace = (\frac{\alpha}{T_p - T_0})^n$  y simplificando $ln(\frac{\alpha}{T_p - T_0}) = -\frac{n E_c}{RT_p} + cte$.
+					Augis-Bennet\\
+					\begin{equation}
+						ln(\frac{\alpha}{T_p - T_0}) = -\frac{n E_c}{RT_p} + cte
+					\end{equation}
 				\end{column}
 			\end{columns}
+			Siendo $\alpha$ la velocidad de calentamiento, $T_p$ la temperatura del pico, $T_0$ la temperatura a la cual se comienza a calentar, $R$ la constante de gases ideales y $E_c$ la energía de activación de la cristalización
 		\end{frame}	
 		
 		
@@ -200,7 +216,7 @@ mediante sputtering.}
 				\begin{column}{.58\textwidth}
 					\begin{figure}[H]
 					\includegraphics[scale=0.04]{img/magnetrones.jpg}
-					\caption*{Magnetrones empleados.}
+					%\caption*{Magnetrones empleados.}
 					\end{figure}
 				\end{column}
 			\end{columns}
@@ -212,13 +228,13 @@ mediante sputtering.}
 					\begin{figure}[H]
 					\centering
 					\includegraphics[scale=0.04]{img/camara.jpg}
-					\caption*{Exterior de la cámara.}
+					%\caption*{Exterior de la cámara.}
 					\end{figure}
 				\end{column}
 				\begin{column}{.49\textwidth}
 					\begin{figure}[H]
 					\includegraphics[scale=0.04]{img/muestras.jpg}
-					\caption*{Interior de la cámara.}					
+					%\caption*{Interior de la cámara.}					
 					\end{figure}
 				\end{column}
 			\end{columns}
@@ -238,7 +254,7 @@ mediante sputtering.}
 			\begin{figure}
 				\centering
 				\includegraphics[scale=0.3]{img/hornito.png}
-				\caption*{Horno tubular empleado para tratamientos térmicos.}				
+				%\caption*{Horno tubular empleado para tratamientos térmicos.}				
 			\end{figure}
 		\end{frame}
 	
@@ -286,15 +302,15 @@ mediante sputtering.}
 				\begin{column}{.49\textwidth}
 					\begin{figure}[H]
 						\centering
-						\includegraphics[scale=0.3]{img/resistividad.eps}
-						\caption*{Esquema del sistema empleado para el método de 								 resistividad por cuatro puntas.}
+						\includegraphics[scale=0.3]{img/resistividadImproved.eps}
+						%\caption*{Esquema del sistema empleado para el método de 								 resistividad por cuatro puntas.}
 					\end{figure}
 				\end{column}
 				\begin{column}{.49\textwidth}
 					\begin{figure}[H]
 						\centering
 						\includegraphics[scale=0.1]{img/resistividad.jpg}
-						\caption*{Resistividad por cuatro puntas.}
+						%\caption*{Resistividad por cuatro puntas.}
 					\end{figure}
 				\end{column}
 			\end{columns}
@@ -358,14 +374,11 @@ mediante sputtering.}
 					$Ni_{47,95}Ti_{26,72}Zr_{25,33}$ & 465,8 & composición en cinta\\ \hline
 					$Ni_{49,40}Ti_{19,96}Zr_{30,64}$ & 445,7 & composición en cinta\\ \hline
 					$Ni_{49,6}Ti_{30,9}Zr_{19,5}$ & 449 $\pm$ 5 & melt spinning\\ \hline
+					$Ni_{54,2}Ti_{45,8}$ & 300 $\pm$ 30 & magnetrón sputtering\\ \hline
 				\end{tabular}
 				\caption*{Valores reportados por Xiaoyang Yi et al para la energía de activación para distintas composiciones en cinta.}
 				\label{XiaoyangYiValues}
 			\end{table}
-
-%Por otra parte, Malvasio en 2017 \citep{Malvasio}, en láminas delgadas obtenidas por deposición mediante magnetrón sputtering en la aleación binaria ($Ni_{54,2}Ti_{45,8}$), obtuvo una energía de activación de $E_c = 300 \pm 30 kJ/mol$ tanto por el método de Kissinger como por el método de Augis-Bennet.
-%
-%En el presente trabajo se determinó la energía de activación de láminas delgadas de $NiTiZr$ producidas por magnetrón sputtering para la composición rica en $Ni$ ($Ni_{50,4}Ti_{30,8}Zr_{18,9}$) y se obtuvieron valores de $E_c = 420 \pm 30$ kJ por el método de Kissinger y de $E_c = 410 \pm 30$ kJ por el método de Augis-Bennet. Si bien estos valores son levemente inferiores a los determinados por Xiaoyang Yi et al., son notoriamente mayores que los obtenidos en la aleación binaria. La leve diferencia entre los valores determinados en este trabajo con los valores obtenidos por Xiaoyang Yi et al. puede ser entendida teniendo en cuenta las diferentes técnicas de producción. Estas diferencias en los valores de la energía de activación causado por los procesos de producción, ya fueron mostrados en la aleación binaria.
 	\end{frame}
 
 	\subsection{Pobres en $Ni$}
